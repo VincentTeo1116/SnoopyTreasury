@@ -4,17 +4,6 @@
 
 ---
 
-## 📋 Table of Contents
-
-- [System Overview](#system-overview)
-- [Core Functions](#core-functions)
-- [Installation Guide](#installation-guide)
-- [User Manual](#user-manual)
-- [Tech Stack](#tech-stack)
-- [Troubleshooting](#troubleshooting)
-
----
-
 ## 📖 System Overview
 
 SnoopyTreasury helps SMEs:
@@ -49,18 +38,31 @@ git clone https://github.com/VincentTeo1116/SnoopyTreasury.git
 cd SnoopyTreasury
 ```
 
-### Step 2: Install Dependencies
+### Step 2: Install Poppler-utils
+1. Go to: [Poppler Utils Git Link](https://github.com/oschwartz10612/poppler-windows/releases)
+2. Download the latest **Release-xx.x.x-x.zip file (e.g., Release-24.08.0-0.zip)**
+3. Extract to a permanent location (maybe in C drive)
+4. Update your ``vision.py`` with the correct path
+```bash
+# Change this:
+POPPLER_PATH = r"C:\Users\User\Desktop\currency agent\Release-26.02.0-0\poppler-26.02.0\Library\bin"
+
+# To this (update username if needed):
+POPPLER_PATH = r"C:\poppler\Library\bin"
+```
+
+### Step 3: Install Dependencies
 ```bash
 pip install -r requirements.
 ```
 
-### Step 3: Set Up Environment Variables
+### Step 4: Set Up Environment Variables
 ```bash
 GOOGLE_VISION_API_KEY=your_google_vision_api_key
 FRANKFURTER_API=https://api.frankfurter.app
 ```
 
-### Step 4: Run the Application
+### Step 5: Run the Application
 ```bash
 streamlit run streamlit_app.py
 ```
