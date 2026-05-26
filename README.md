@@ -51,6 +51,9 @@ POPPLER_PATH = r"C:\Users\User\Desktop\currency agent\Release-26.02.0-0\poppler-
 POPPLER_PATH = r"C:\poppler\Library\bin"
 ```
 
+### FOR TESTING PURPOSES
+- JUST NEED TO OPEN THE ``start.bat``
+
 ### Step 3: Install Dependencies
 ```bash
 pip install -r requirements.
