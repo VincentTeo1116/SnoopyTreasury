@@ -31,6 +31,7 @@ No expensive APIs, no high bank balance required. Just upload your invoice or ba
 
 - Python 3.9 or higher
 - Git
+- Poppler-utils
 
 ### Step 1: Clone the Repository
 ```bash
@@ -56,7 +57,7 @@ POPPLER_PATH = r"C:\poppler\Library\bin"
 
 ### Step 3: Install Dependencies
 ```bash
-pip install -r requirements.
+pip install -r requirements.txt
 ```
 
 ### Step 4: Set Up Environment Variables
@@ -70,4 +71,25 @@ FRANKFURTER_API=https://api.frankfurter.app
 streamlit run streamlit_app.py
 ```
 - The app will open at ```http://localhost:8501```
+
+## 🔗 Links
+- Video Demo: [SnoopyAI TreasurerAgent Video](https://drive.google.com/file/d/1yGse8QqK_QoFglV609m2nfQITeHlf1XJ/view?usp=sharing)
+- Slides: [SnoopyAI TreasurerAgent Slides](https://drive.google.com/file/d/11i5ryVJWX_4QFj1tpMFI6W1E1up63e86/view?usp=sharing)
+
+## ❓ Troubleshooting
+
+### OCR doesn't work?
+- Ensure Poppler is installed correctly (see Step 2)
+- For cloud deployment, `poppler-utils` must be in `packages.txt`
+
+### Firebase not connecting?
+- Check `serviceAccountKey.json` is in project root
+- For Streamlit Cloud, add `serviceAccountKey` to Secrets
+
+### PDF conversion fails?
+- Verify Poppler path in `vision.py`
+- For Windows, use absolute path like `C:\poppler\Library\bin`
+
+### "use_container_width" warning?
+- This is a deprecation warning - the app still works fine
 
