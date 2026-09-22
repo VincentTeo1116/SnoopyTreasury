@@ -52,18 +52,47 @@ POPPLER_PATH = r"C:\Users\User\Desktop\currency agent\Release-26.02.0-0\poppler-
 POPPLER_PATH = r"C:\poppler\Library\bin"
 ```
 
-### FOR TESTING PURPOSES
-- JUST NEED TO OPEN THE ``start.bat``
+### Step 3: Firebase Setup 
 
-### Step 3: Install Dependencies
+SnoopyTreasury uses Firebase Firestore as its cloud database. If you skip this step, the system will automatically fall back to local JSON storage.
+
+### A: Create a Firebase Project
+1. Go to [Firebase Console](https://console.firebase.google.com/)
+2. Click **Create Project** --> Enter a project name (e.g., `SnoopyTreasury`)
+3. Disable Google Analytics (optional) --> Click **Create Project**
+
+### B: Enable Firestore Database
+1. In the left menu, click **Firestore Database**
+2. Click **Create Database**
+3. Choose **Start in test mode**
+4. Select a region (e.g., `asia-southeast1` for Malaysia)
+5. Click **Enable**
+
+### C: Generate Service Account Key
+1. Go to **Project Settings** (gear icon) → **Service Accounts** tab
+2. Click **Generate new private key**
+3. Click **Generate Key** — a `.json` file will download
+4. Rename the file to `serviceAccountKey.json`
+5. Place it in your project root folder
+
+### Step 4: Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### Step 4: Set Up Environment Variables
+### Step 5: Set Up Environment Variables
 ```bash
+#API Keys
 GOOGLE_VISION_API_KEY=your_google_vision_api_key
+GEMINI_API_KEY=your_gemini_api_key
+
 FRANKFURTER_API=https://api.frankfurter.app
+
+# Firebase
+FIREBASE_SERVICE_ACCOUNT_PATH=serviceAccountKey.json
+
+# Google Vision
+GOOGLE_APPLICATION_CREDENTIALS=vision_service_account.json
 ```
 
 ### Step 5: Run the Application
@@ -71,10 +100,6 @@ FRANKFURTER_API=https://api.frankfurter.app
 streamlit run streamlit_app.py
 ```
 - The app will open at ```http://localhost:8501```
-
-## 🔗 Links
-- Video Demo: [SnoopyAI TreasurerAgent Video](https://drive.google.com/file/d/1yGse8QqK_QoFglV609m2nfQITeHlf1XJ/view?usp=sharing)
-- Slides: [SnoopyAI TreasurerAgent Slides](https://drive.google.com/file/d/11i5ryVJWX_4QFj1tpMFI6W1E1up63e86/view?usp=sharing)
 
 ## ❓ Troubleshooting
 

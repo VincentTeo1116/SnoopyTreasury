@@ -12,8 +12,8 @@ genai.configure(api_key=GEMINI_API_KEY)
 
 class GeminiHandler:
     def __init__(self):
-        self.model = genai.GenerativeModel('gemini-1.5-flash')
-    
+        self.model = genai.GenerativeModel('gemini-3.6-flash')
+
     def explain_prediction(self, amount: float, currency: str, bank: str, 
                           market_rate: float, markup: float, final_amount: float) -> str:
         """Generate human-friendly explanation of prediction"""
