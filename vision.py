@@ -11,13 +11,14 @@ import streamlit as st
 
 # ================= CONFIGURATION =================
 try:
-    API_KEY = st.secrets["GOOGLE_VISION_API_KEY"]
-except:
-    API_KEY = os.getenv("GOOGLE_VISION_API_KEY", "AIzaSyA2diDij3p7ARLIA0ANhv3tahW1PNh0uGY")
+    API_KEY = st.secrets.get("GOOGLE_VISION_API_KEY", os.getenv("GOOGLE_VISION_API_KEY", ""))
+except Exception:
+    API_KEY = os.getenv("GOOGLE_VISION_API_KEY", "")
 
-# Poppler path for Windows local development
-POPPLER_PATH = r"C:\Users\Vincent\Documents\Release-26.02.0-0\poppler-26.02.0\Library\bin"
-POPPLER_PATH = POPPLER_PATH if os.path.exists(POPPLER_PATH) else None
+# Poppler path for local development (can be configured via environment variable)
+POPPLER_PATH = os.getenv("POPPLER_PATH")
+if POPPLER_PATH and not os.path.exists(POPPLER_PATH):
+    POPPLER_PATH = None
 
 
 # ================= PDF TO IMAGE (Cross-Platform) =================
