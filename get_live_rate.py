@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-FRANKFURTER_API = os.getenv("FRANKFURTER_API")
+FRANKFURTER_API = os.getenv("FRANKFURTER_API", "https://api.frankfurter.app")
 
 # Fallback rates (in case API fails)
 FALLBACK_RATES = {
