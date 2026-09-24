@@ -18,7 +18,11 @@ ENV/
 .env.*
 !.env.example
 serviceAccountKey.json
+vision_service_account.json
+.streamlit/
 streamlit/secrets.toml
+*.pem
+*.key
 
 # Generated exports and local runtime data
 exports/*.csv
